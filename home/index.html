@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quickstock - Home</title>
+    <script src="login.js"></script>
+    <style>
+     * {
+              margin: 0;
+              padding: 0;
+
+            }
+            #nomeUsuario
+      {
+color: black;
+      }
+            
+ 
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+      
+      img
+      {
+      width: 80px;
+      position: relative;
+      right: -30px;
+      }
+      body
+      {
+          margin: 0px;
+          font-family: 'Montserrat', sans-serif;
+      }
+      ul
+      {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      }
+      .cabeca
+      {
+          margin: 0 15px;
+          color: white;
+      
+         
+      }
+      nav
+      {
+          display: flex;
+          justify-content:space-between;
+          margin: 0 50px;
+      }
+      header 
+      {
+          background: rgb(0, 9, 36);
+      }
+      a
+      {
+          color: white;
+          text-decoration: none;
+      }
+      
+      .cabeca :hover
+      {
+         transition: 0.5s;
+         background-color: #0aa2b8;
+         padding: 34px 30px;
+      color:rgb(0, 9, 36) ;
+      font-family: 'bold';
+      
+         
+      }
+      #btn_logout
+      {
+        background-color: rgb(0, 9, 36);
+        color: white;
+        border-color: rgb(0, 9, 36);
+        border-radius: 15px;
+        padding: 10px;
+        font-family: 'Montserrat', sans-serif;
+      
+      }
+      
+      #titulo
+{
+  color: aliceblue;
+  padding-top: 25px;
+  padding-right: 400px;
+  font-family: 'Montserrat', sans-serif;
+}
+#alinhar
+{
+  display: flex;
+  justify-content:space-between;
+} 
+.op
+{
+    
+    right: 50%;
+    padding: 50px;
+      align-items: center;
+}
+
+
+#editavel
+{
+    padding: 50px;
+position: absolute;
+color: white;
+right: 20%;
+}
+#op1
+{
+    background-color: #7c818e;
+    border-radius: 15px;
+    padding: 45px;
+}
+#op2
+{
+    background-color: #7c818e;
+    border-radius: 15px;
+    padding: 45px;
+}
+#op3
+{
+    background-color: #7c818e;
+    border-radius: 15px;
+    padding: 45px;
+}
+#op4
+{
+    background-color: #7c818e;
+    border-radius: 15px;
+    padding: 45px;
+}
+
+
+        </style>
+    <script>
+        if (!usuarioCorrente.login) {
+            window.location.href = LOGIN_URL;
+        }
+
+        function exibeUsuarios() {
+            
+            let listaUsuarios = '';
+            for (i = 0; i < db_usuarios.usuarios.length; i++) {
+                let usuario = db_usuarios.usuarios[i];
+                listaUsuarios += `<tr><td scope="row">${usuario.nome}</td><td>${usuario.login}</td><td>${usuario.email}</td></tr>`;
+            }
+
+            document.getElementById("table-usuarios").innerHTML = listaUsuarios
+
+        }
+
+        function initPage() {
+
+            document.getElementById('btn_logout').addEventListener('click', logoutUser);
+
+            document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+
+            exibeUsuarios ();
+        }
+
+        window.addEventListener('load', initPage);
+        
+       
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+           <div> <a href= index.html>
+            <img src="logoqs.jpeg" alt="logo Quick Stock" >
+        </div>
+           <div id="alinhar"> 
+            <a href= index.html>
+            <h1 id="titulo">
+              Home
+            </h1>
+            <ul>
+              <li class="cabeca"><a href= product.html>Produtos</a></li>
+              <li class="cabeca"><a href= serviço.html>Serviços</a></li>
+              <li class="cabeca"><a href= fornecedor.html>Fornecedores</a></li>
+              <li class="cabeca"><a href= cliente.html>Clientes</a></li>
+                
+            </ul>
+          </div>
+        </nav>
+    </header>
+    <h1><span id="nomeUsuario"></span></h1>
+    <button id="btn_logout">Efetuar Logout</button>
+    <br></br>
+<div>
+    <ul id="editavel">
+        <li class="op" id="op1"> <img src="produto.png" alt="logo Quick Stock"><h1><a href="product.html">Produtos</a></h1></li>
+        <li class="op" id="op2"> <img src="servico.png" alt="logo Quick Stock"><h1><a href="serviço.html">Serviços</a></h1></li>
+        <li class="op" id="op3"> <img src="fornecedor.png" alt="logo Quick Stock"><h1><a href="fornecedor.html">Fornecedores</a></h1></li>
+        <li class="op" id="op4"> <img src="cliente.png" alt="logo Quick Stock"><h1><a href="cliente.html">Clientes</a></h1></li>
+    </ul>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+</body>
+
+</html>

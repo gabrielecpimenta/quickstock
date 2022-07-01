@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta servico="viewport" content="width=na, initial-scale=1.0">
+    <title>Quick Stock</title>
+    <style>
+
+          * {
+              margin: 0;
+              padding: 0;
+
+            }
+            #nomeUsuario
+      {
+color: black;
+      }
+            
+ 
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+      
+      img
+      {
+      width: 80px;
+      }
+      body
+      {
+          margin: 0px;
+          font-family: 'Montserrat', sans-serif;
+      }
+      ul
+      {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      }
+      li
+      {
+          margin: 0 15px;
+          color: white;
+      
+         
+      }
+      nav
+      {
+          display: flex;
+          justify-content:space-between;
+          margin: 0 50px;
+      }
+      header 
+      {
+          background: rgb(0, 9, 36);
+      }
+      a
+      {
+          color: white;
+          text-decoration: none;
+      }
+      
+      li :hover
+      {
+         transition: 0.5s;
+         background-color: #0aa2b8;
+         padding: 34px 30px;
+      color:rgb(0, 9, 36) ;
+      font-family: 'bold';
+      
+         
+      }
+      #btn_logout
+      {
+        background-color: rgb(0, 9, 36);
+        color: white;
+        border-color: rgb(0, 9, 36);
+        border-radius: 15px;
+        padding: 10px;
+        font-family: 'Montserrat', sans-serif;
+      
+      }
+
+  h1 {
+    font-size: 2em;
+
+  }
+  
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+  
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  a {
+    background-color: transparent;
+  }
+  
+  abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
+  
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  small {
+    font-size: 80%;
+  }
+  
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+  
+  img {
+    border-style: none;
+  }
+  
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
+
+  button,
+  input { /* 1 */
+    overflow: visible;
+  }
+  
+  button,
+  select { /* 1 */
+    text-transform: none;
+  }
+  
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+  
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  
+  fieldset {
+    padding: 0.35em 0.75em 0.625em;
+  }
+  
+  legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+  }
+  
+  progress {
+    vertical-align: baseline;
+  }
+  
+  textarea {
+    overflow: auto;
+  }
+  
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
+  
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  [type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
+  
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+  
+  details {
+    display: block;
+  }
+
+  summary {
+    display: list-item;
+  }
+  
+  template {
+    display: none;
+  }
+  
+  [hidden] {
+    display: none;
+  }
+  /* --------------------------- Font --------------------------- */
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../font/Ubuntu-M.ttf") format("truetype");
+}
+
+/* --------------------------- Header --------------------------- */
+
+
+
+/* --------------------------- Form --------------------------- */
+
+#input-data {
+    width: 90vw;
+    font-family: Ubuntu;
+    margin: 0 auto;
+    margin-top: 5vh;
+    display: flex;
+}
+
+.input-text {
+    flex: 1;
+    min-width: 210px;
+    margin: 5px;
+    height: 35px;
+    padding-left: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #262626;
+    transition: 0.25s;
+    outline: none;
+}
+
+.input-text:focus{
+    border-color: rgb(0, 9, 36);
+}
+
+.input-btn {
+    flex: 1;
+    margin: 5px;
+    height: 39px;
+
+    background-color: rgb(0, 9, 36);
+    color: white;
+    border-color: rgb(0, 9, 36);
+    border-radius: 15px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.input-btn:hover {
+    background-color: #383838;
+    border-color: #383838;
+    color: white;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* --------------------------- Table --------------------------- */
+
+#myTable {
+    font-family: Ubuntu;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5vh;
+    border-collapse: collapse;
+}
+
+#myTable th {
+    background-color: rgb(0, 9, 36);
+    padding: 10px;
+    color: white;
+    font-weight: 100;
+}
+
+
+#myTable td, th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#myTable td{
+    padding: 5px;
+}
+
+#myTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#myTable tr:hover {
+    background-color: #ddd;
+}
+
+.remove-btn{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-width: 0px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+          .button{
+            display: flex;
+            gap: 2rem;
+          }
+          #titulo
+{
+  color: aliceblue;
+  padding-top: 20px;
+  padding-right: 370px;
+  font-family: 'Montserrat', sans-serif;
+}
+#alinhar
+{
+  display: flex;
+  justify-content:space-between;
+}  
+
+          </style>
+    <script src="login.js"></script>
+    <script>
+      if (!usuarioCorrente.login) {
+          window.location.href = LOGIN_URL;
+      }
+
+      function exibeUsuarios() {
+          
+          let listaUsuarios = '';
+          for (i = 0; i < db_usuarios.usuarios.length; i++) {
+              let usuario = db_usuarios.usuarios[i];
+              listaUsuarios += `<tr><td scope="row">${usuario.nome}</td><td>${usuario.login}</td><td>${usuario.valorServico}</td></tr>`;
+          }
+
+          document.getElementById("table-usuarios").innerHTML = listaUsuarios
+
+      }
+
+      function initPage() {
+
+          document.getElementById('btn_logout').addEventListener('click', logoutUser);
+
+          document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+
+          exibeUsuarios ();
+      }
+
+      window.addEventListener('load', initPage);
+  </script>
+      <script> 
+        //ADICIONAR UMA NOVA LINHA NA TABELA
+    function addToTable() {
+    
+    //DEFINE VARIAVEIS E RECEBE DADOS
+    let servico = document.getElementById('servico').value;
+    let valorServico = document.getElementById('valorServico').value;
+    let tempoServico = document.getElementById('tempoServico').value;
+    let valorMateriais = document.getElementById('valorMateriais').value;
+    let table = document.getElementById("myTable");
+    
+    let tableSize = table.rows.length; //CALCULA O TAMANHO DA TABELA
+    let row = table.insertRow(tableSize); //POE UMA LINHA ABAIXO DA TABELA
+    let cell1 = row.insertCell(0); //POE AS CELULAS DA LINHA
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
+    let cell4 = row.insertCell(3);
+    let cell5 = row.insertCell(4);
+    let cell6 = row.insertCell(5);
+    row.id = tableSize; //ADICIONANDO O ID NO ELEMENTO A SER CRIADO
+    
+    //CODIGO DO BOTAO DE REMOVER
+    let btnCode = "<button class='remove-btn' onclick='removeToTable(this)'>Remover</button>";
+    
+    //PREENCHENDO AS CELULAS DA LINHA
+    cell1.innerHTML = tableSize;
+    cell2.innerHTML = servico;
+    cell3.innerHTML = valorServico;
+    cell4.innerHTML = tempoServico;
+    cell5.innerHTML = valorMateriais;
+    cell6.innerHTML = btnCode;
+    
+    //LIMPA OS CAMPOS PRA INSERIR OS DADOS
+    document.getElementById('servico').value = "";
+    document.getElementById('valorServico').value = "";
+    document.getElementById('tempoServico').value = "";
+    document.getElementById('valorMateriais').value = "";
+    
+    
+    //RETORNA UM "FALSE" PRA EVITAR DA PAGINA DAR RELOAD
+    return false;
+    }
+    
+    //FUNCAO PRA REMOVER UMA LINHA
+    function removeToTable(id){
+    
+    let row = id.parentNode.parentNode.id; 
+    row = document.getElementById(row); 
+    row.parentNode.removeChild(row); 
+    
+    // RETORNA "FALSE" PRA EVITAR DA PAGINA DAR RELOAD NOVAMENTE
+    
+    return false;
+    }
+        </script>
+         </script>
+         <script>
+           function salvaservico (event) {
+            // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+            event.preventDefault ();
+
+            // Obtem os dados do formulário
+            let servico  = document.getElementById('servico').value;
+            let valorServico   = document.getElementById('valorServico').value;
+            let tempoServico  = document.getElementById('tempoServico').value;
+            let valorMateriais  = document.getElementById('valorMateriais').value;
+
+
+            // Adiciona o usuário no banco de dados
+            addUser (servico, valorServico, tempoServico, valorMateriais);
+            alert ('salvo com sucesso.');
+          }
+            
+            function addUser (servico, valorServico, tempoServico, valorMateriais) {
+    
+
+    let Produtos = { "servico": servico, "valorServico": valorServico, "tempoServico": tempoServico, "valorMateriais": valorMateriais };
+    tb_for.Produtos.push (Produtos);
+
+    localStorage.setItem('tb_for', JSON.stringify (tb_for));
+
+}
+
+document.getElementById ('btndeubom').addEventListener ('click', salvaservico);        
+        </script>
+</head>
+<body> 
+  <header>
+    <nav>
+      <a href= index.html>
+        <img src="logoqs.jpeg" alt="logo Quick Stock">
+        <a href= serviço.html>
+       <div id="alinhar"> 
+        <h1 id="titulo">
+          Serviços
+        </h1>
+        <ul>
+          <li><a href= index.html>Home</a></li>
+          <li><a href= product.html>Produtos</a></li>
+          <li><a href= fornecedor.html>Fornecedores</a></li>
+          <li><a href= cliente.html>Clientes</a></li>
+            
+        </ul>
+      </div>
+    </nav>
+</header>
+<h1> <span id="nomeUsuario"></span></h1>
+    <button id="btn_logout">Efetuar Logout</button>
+    <section id="table">
+        <form method="POST">
+            <div id="input-data">
+                <input id="servico" class="input-text" placeholder="Nome do serviço" type="text" required />
+                <input id="valorServico" class="input-text" placeholder="Valor do serviço (R$)" type="number" required />
+                <input id="tempoServico" class="input-text" placeholder="Tempo estimado para o serviço" type="text" required />
+                <input id="valorMateriais" class="input-text" placeholder="Valor gasto em materiais (R$)" type="number" required />
+                <input class="input-btn" id="btndeubom" type="submit" value="Enviar" onclick="return addToTable()" />
+            </div>
+        </form>
+        <table id="myTable">
+            <tr id="0">
+                <th>ID</th>
+                <th>Nome do Serviço</th>
+                <th>Valor do serviço (R$)</th>
+                <th>Tempo Médio do serviço</th>
+                <th>Valor gasto em materiais (R$)</th>
+                <th>Ação</th>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>
